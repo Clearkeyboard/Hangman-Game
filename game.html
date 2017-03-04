@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>HangmanProgram</title>
+
+<script language="javascript" type="text/javascript">
+
+
+// Get a random number
+function get_random()
+{
+	document.myform.ltr.focus();
+	var ranNum= Math.floor(Math.random()*5);
+	return ranNum; // Returns random number to function to be used
+
+}
+// Fetch the possible words using random number and array of choices
+function getword()
+{
+	var myfortune=get_random(); // Uses random number from return 
+
+	var quote=new Array(5); //Creates an array with index 5
+	quote[0]="games";
+	quote[1]="development";
+	quote[2]="mechanical";  //Assigns each index in Array with a word
+	quote[3]="phone";
+	quote[4]="motorcycle";
+
+ 	var answer = quote[myfortune]; //Assigns quote index to variable answer
+
+	// Set hidden field to answer.
+	myform.answer.value = answer; 
+}
+var answerArray = [];
+for (var i = 0; i < quote.length;i++){
+    answerArray[i]l
+}
+
+</script>
+</head>
+<body>
+
+<H1><bold><center> Hangman Program</h1>
+<h3> This is the Hangman Game.<br>
+
+Click Start Game button to begin<br><br><br>
+
+Then type a letter In the Guess Letter Textbox
+<br>
+Then click the guess button
+<br>
+Click Start game to play again.
+<br>
+<br>
+
+<Form name = "myform">
+<input type="button" value="Start Game" onclick="getword()"><br>
+
+<!-- Hidden field for storing answer -->
+<input type="hidden" name="answer" value=""/>
+
+<input type="button" value="Guess" onclick="formCheck()">
+<input name = "ltr" type="text" size = "2"><br>
+
+<br>The Word is:
+<h3></h3>
+<BR>
+<BR>
+Wrong Letters<input name = "wrongletters" type="text" size = "36">
+<BR>
+<BR>
+<input type="reset" value="Reset">
+</form>
+</head>
+</body>
