@@ -3,7 +3,7 @@
     var availableLetters, words, guessInput, guess, 
     guessButton, lettersGuessed, lettersMatched, output,
      man, letters, lives, currentWord, numLettersMatched,
-     usedArray, clear, dead,  usedLtr, damage, correct, messages;
+     usedArray, clear, dead, start, usedLtr, damage, correct, messages;
 
     function setup() {
         /* start config options */
@@ -16,11 +16,13 @@
             guessed: ' already guessed, please try again...',
             validLetter: 'Please enter a letter from A-Z'
         };
+        
         /* end config options */
         damage = document.getElementById('lostrings');
         correct = document.getElementById('correct');
         clear = document.getElementById('clear');
         dead = document.getElementById('dead');
+        start = document.getElementById('start');
         lettersGuessed = lettersMatched = '';
         numLettersMatched = 0;
         usedLtr = document.getElementById("guessedletters");
@@ -32,7 +34,7 @@
         output = document.getElementById("output");
         man = document.getElementById("livesleft");
         guessInput = document.onkeyup;
-
+        start.play();
         man.innerHTML = 'You have ' + lives + ' lives remaining';
         output.innerHTML = '';
 

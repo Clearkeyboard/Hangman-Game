@@ -96,3 +96,8 @@ center {
     background: #004AA7;
     padding-bottom: 5px;
     }
+button{
+    position: relative;
+    left: 47%;
+    text-align: center;
+}
