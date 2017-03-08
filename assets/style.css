@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'sonic';
+    src: url("fonts/SegaSonic.TTF");
+}
+@font-face {
+    font-family: 'masterdrive';
+    src: url("fonts/SegaGenesis.TTF");
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+    background-image: url(img/texture.png);
+}
+/* Keep it simple - improvement would be to not display characters */
+ .letter {
+    display: inline-block;
+    list-style: none;
+    width: 20px;
+    margin: 0 5px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    color: white;
+    font-family: 'sonic';
+    
+}
+.current-word {
+    list-style: none;
+}
+.output {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.correct {
+    background-color: green;
+    transition: all 1s ease;
+}
+.error {
+    color: red;
+    opacity: 1;
+}
+.warning {
+    color: orange;
+    opacity: 1;
+}
+.win {
+    color: green;
+    opacity: 1;
+}
+
+center{
+    font-family: 'masterdrive';
+    color: black;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color:    
+}
+#wrapper{
+    background: lightgray;
+    height: 100%;
+}

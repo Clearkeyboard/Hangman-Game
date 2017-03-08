@@ -2,34 +2,34 @@
 <html>
 <head>
 <title>HangmanProgram</title>
-<script src="assets/game.js"></script>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<div class="col-md-6 col-md-offset-3" id="wrapper">
 <H1><bold><center> Hangman Program</h1>
-<h3> This is the Hangman Game.<br>
 
-Click Start Game button to begin<br><br><br>
-
-Then type a letter In the Guess Letter Textbox
+<p class="text-center">Type a letter to begin</p><br><br><br>
 <br>
-Then click the guess button
-<br>
-Click Start game to play again.
+<p class="text-center">Click Restart game to play again.</p>
 <br>
 <br>
 
 <Form name = "myform">
 
-<br>The Word is:
-<h3 id="blank"></h3>
+<br>
+<h3 class="text-center" id="blank"></h3>
 <BR>
+<BR><h3 class="text-center" id="livesleft"></h3>
 <BR>
-Wrong Letters<h3 id="wrongletters"></h3>
-<BR>
-<BR>
-<input type="reset" value="Reset">
+<h3 class="text-center">Used Letters</h3>
+<h3 class="text-center" id="guessedletters"></h3>
+<BR><h1 class="text-center" id="gameover"></h1>
+<BR><h1 class="text-center" id="output"></h1>
+<button class="col-md-2 col-md-offset-5" id="restart" name="restart" type="button" onclick="setup()">Restart</button>
 </form>
-
+<script src="assets/game.js"></script>
+</div>
 </body>
 </html>
