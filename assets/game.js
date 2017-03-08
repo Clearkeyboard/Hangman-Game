@@ -3,7 +3,7 @@
     var availableLetters, words, guessInput, guess, 
     guessButton, lettersGuessed, lettersMatched, output,
      man, letters, lives, currentWord, numLettersMatched,
-     usedArray, usedLtr, messages;
+     usedArray, clear, dead,  usedLtr, damage, correct, messages;
 
     function setup() {
         /* start config options */
@@ -17,14 +17,17 @@
             validLetter: 'Please enter a letter from A-Z'
         };
         /* end config options */
-
+        damage = document.getElementById('lostrings');
+        correct = document.getElementById('correct');
+        clear = document.getElementById('clear');
+        dead = document.getElementById('dead');
         lettersGuessed = lettersMatched = '';
         numLettersMatched = 0;
         usedLtr = document.getElementById("guessedletters");
         usedArray = [];
         /* choose a word */
         currentWord = words[Math.floor(Math.random() * words.length)];
-
+        console.log(currentWord);
         /* make #man and #output blank, create vars for later access */
         output = document.getElementById("output");
         man = document.getElementById("livesleft");
@@ -49,9 +52,12 @@
         if (win) {
             output.innerHTML = messages.win;
             output.classList.add('win');
+            clear.play();
+            
         } else {
             output.innerHTML = messages.lose;
             output.classList.add('error');
+            dead.play();
         }
         guessInput.value = '';
     }
@@ -82,6 +88,7 @@
 
                     for (var i = 0; i < lettersToShow.length; i++) {
                         lettersToShow[i].classList.add("correct");
+                        correct.play();
                     }
 
                     /* check to see if letter appears multiple times */
@@ -101,8 +108,8 @@
                     lettersGuessed += guess;
                     lives--;
                     man.innerHTML = 'You have ' + lives + ' lives remaining';
-                    console.log(lettersGuessed);
                     usedLtr.innerHTML = lettersGuessed;
+                    damage.play();
                     if (lives === 0) gameOver();
                 }
             }

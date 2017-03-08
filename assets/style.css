@@ -6,8 +6,15 @@
     font-family: 'masterdrive';
     src: url("fonts/SegaGenesis.TTF");
 }
+@font-face {
+    font-family: 'saturn';
+    src: url("fonts/SegaNet.TTF");
+}
 * {
     box-sizing: border-box;
+}
+#border{
+    background-image: url(img/top.png);
 }
 body {
     font-family: sans-serif;
@@ -21,19 +28,48 @@ body {
     margin: 0 5px;
     border-bottom: 1px solid black;
     text-align: center;
-    color: white;
+    color: #004AA7;
     font-family: 'sonic';
+    user-select: none;
+    font-size: 2em;
+    margin-top: 2%;
     
+}
+#guessedletters{
+    font-family: 'sonic';
+    font-size: 2em;
+    color: white;
+    letter-spacing: 5px;
+}
+#head{
+    float:left;
+}
+#seal{
+    float: right;
+    transform: rotate(-30deg);
+}
+img{
+    display: block;
+    max-width:230px;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+}
+.text-center{
+    font-family: 'saturn';
+    font-size: 1em;
+    color: white;
 }
 .current-word {
     list-style: none;
+    font-size: 1em;
 }
 .output {
     opacity: 0;
     transition: opacity 1s ease;
 }
 .correct {
-    background-color: green;
+    color: white;
     transition: all 1s ease;
 }
 .error {
@@ -49,13 +85,14 @@ body {
     opacity: 1;
 }
 
-center{
+center {
     font-family: 'masterdrive';
     color: black;
     -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color:    
+    -webkit-text-stroke-color: white; 
 }
 #wrapper{
-    background: lightgray;
-    height: 100%;
-}
+    margin-top: 3%;
+    background: #004AA7;
+    padding-bottom: 5px;
+    }
